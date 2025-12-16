@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    # Configurado dinámicamente por TestContainers
+    url: jdbc:postgresql://localhost:5432/test
+    username: test
+    password: test
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  
+  flyway:
+    enabled: false  # Deshabilitado para tests, usamos create-drop
+
+telegram:
+  api-url: http://localhost:8089/bot
+  bot-token: test-token
+  chat-id: "123456789"
+
+logging:
+  level:
+    com.example.ticketero: DEBUG
+    org.testcontainers: INFO
+    io.restassured: DEBUG
